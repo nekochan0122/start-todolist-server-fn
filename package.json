@@ -1,0 +1,53 @@
+{
+  "name": "start-todolist-server-fn",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:generate": "prisma generate",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "5.19.1",
+    "@tanstack/react-query": "^5.53.3",
+    "@tanstack/react-query-devtools": "^5.54.0",
+    "@tanstack/react-router": "^1.52.5",
+    "@tanstack/react-router-with-query": "^1.52.5",
+    "@tanstack/router-devtools": "^1.52.5",
+    "@tanstack/start": "^1.52.5",
+    "@vitejs/plugin-react": "^4.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vinxi": "^0.4.2"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.9.1",
+    "@nekochan0122/config": "^1.6.0",
+    "@stylistic/eslint-plugin": "^2.7.2",
+    "@types/eslint__js": "^8.42.3",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.11",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "globals": "^15.9.0",
+    "postcss": "^8.4.44",
+    "prisma": "^5.19.1",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}

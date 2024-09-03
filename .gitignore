@@ -1,0 +1,4 @@
+app/router-tree.gen.ts
+node_modules
+prisma/*.db
+.env
