@@ -1,4 +1,4 @@
-app/router-tree.gen.ts
+app.config.timestamp_*
 node_modules
 prisma/*.db
 .env
