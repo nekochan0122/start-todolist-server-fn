@@ -41,6 +41,9 @@ importers:
       vinxi:
         specifier: ^0.4.2
         version: 0.4.2(@types/node@22.5.4)(ioredis@5.4.1)(terser@5.31.6)(webpack-sources@3.2.3)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@eslint/compat':
         specifier: ^1.1.1

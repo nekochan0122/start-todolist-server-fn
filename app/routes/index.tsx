@@ -1,5 +1,6 @@
 import { useMutation, useSuspenseQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
+import { z } from 'zod'
 import type { FormEvent } from 'react'
 
 import { createTodo, deleteTodo, getTodolistQueryOptions, updateTodo } from '~/api/todo'
@@ -11,6 +12,10 @@ export const Route = createFileRoute('/')({
     )
   },
   component: Home,
+})
+
+const formSchema = z.object({
+  name: z.string().trim().min(1),
 })
 
 function Home() {
@@ -47,11 +52,10 @@ function Home() {
 
     const form = e.currentTarget
     const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    const dataParsed = formSchema.parse(data)
 
-    const name = formData.get('name') as string
-    if (name.trim().length === 0) return
-
-    createTodoMutation.mutate({ name }, {
+    createTodoMutation.mutate({ name: dataParsed.name }, {
       onSuccess: () => form.reset(),
     })
   }
