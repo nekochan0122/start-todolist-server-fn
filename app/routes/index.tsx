@@ -55,7 +55,7 @@ function Home() {
     const data = Object.fromEntries(formData)
     const dataParsed = formSchema.parse(data)
 
-    createTodoMutation.mutate({ name: dataParsed.name }, {
+    createTodoMutation.mutate(dataParsed, {
       onSuccess: () => form.reset(),
     })
   }
