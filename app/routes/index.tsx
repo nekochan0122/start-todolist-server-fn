@@ -6,8 +6,8 @@ import type { FormEvent } from 'react'
 import { createTodo, deleteTodo, getTodolistQueryOptions, updateTodo } from '~/api/todo'
 
 export const Route = createFileRoute('/')({
-  loader: async ({ context }) => {
-    await context.queryClient.ensureQueryData(
+  loader: ({ context }) => {
+    context.queryClient.ensureQueryData(
       getTodolistQueryOptions(),
     )
   },
