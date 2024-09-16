@@ -1,5 +1,6 @@
 import { useMutation, useSuspenseQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
+import { toast } from 'sonner'
 import { z } from 'zod'
 import type { FormEvent } from 'react'
 
@@ -55,8 +56,14 @@ function Home() {
     const data = Object.fromEntries(formData)
     const dataParsed = formSchema.parse(data)
 
-    createTodoMutation.mutate(dataParsed, {
+    const promise = createTodoMutation.mutateAsync(dataParsed, {
       onSuccess: () => form.reset(),
+    })
+
+    toast.promise(promise, {
+      loading: 'Creating todo...',
+      success: 'Todo created',
+      error: 'Failed to create todo',
     })
   }
 
