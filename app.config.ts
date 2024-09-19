@@ -9,4 +9,7 @@ export default defineConfig({
   vite: {
     plugins: () => [tsconfigPaths()],
   },
+  deployment: {
+    preset: 'node-server',
+  },
 })
