@@ -1,5 +1,3 @@
-import { scheduler } from 'node:timers/promises'
-
 import { queryOptions } from '@tanstack/react-query'
 import { createServerFn } from '@tanstack/start'
 import type { Todo } from '@prisma/client'
@@ -27,8 +25,6 @@ export type CreateTodoInput = {
 }
 
 export const createTodo = createServerFn('POST', async ({ name }: CreateTodoInput) => {
-  await scheduler.wait(300)
-
   await prisma.todo.create({
     data: {
       name,
