@@ -27,26 +27,24 @@ function Home() {
   const createTodoMutation = useMutation({
     mutationKey: ['createTodo'],
     mutationFn: createTodo,
-    onSuccess: () => {
-      todolistQuery.refetch()
-    },
+    onSuccess: handleMutationSuccess,
   })
 
   const updateTodoMutation = useMutation({
     mutationKey: ['updateTodo'],
     mutationFn: updateTodo,
-    onSuccess: () => {
-      todolistQuery.refetch()
-    },
+    onSuccess: handleMutationSuccess,
   })
 
   const deleteTodoMutation = useMutation({
     mutationKey: ['deleteTodo'],
     mutationFn: deleteTodo,
-    onSuccess: () => {
-      todolistQuery.refetch()
-    },
+    onSuccess: handleMutationSuccess,
   })
+
+  function handleMutationSuccess() {
+    todolistQuery.refetch()
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
