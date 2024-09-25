@@ -70,8 +70,8 @@ function Home() {
   }
 
   return (
-    <div className='p-2'>
-      <form onSubmit={handleSubmit} className='mb-2 flex gap-2'>
+    <div className='space-y-2 p-2'>
+      <form onSubmit={handleSubmit} className='flex gap-2'>
         <input name='name' type='text' className='border' />
         <button type='submit'>➕</button>
       </form>
