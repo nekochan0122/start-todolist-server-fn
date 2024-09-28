@@ -5,6 +5,14 @@ export default defineConfig({
   server: {
     preset: 'node-server',
   },
+  routers: {
+    ssr: {
+      entry: './app/entry-server.tsx',
+    },
+    client: {
+      entry: './app/entry-client.tsx',
+    },
+  },
   tsr: {
     appDirectory: 'app',
     generatedRouteTree: 'app/route-tree.gen.ts',
