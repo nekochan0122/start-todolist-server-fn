@@ -7,7 +7,7 @@ export default defineConfig({
   },
   routers: {
     ssr: {
-      entry: './app/entry-server.tsx',
+      entry: './app/entry-server.ts',
     },
     client: {
       entry: './app/entry-client.tsx',
