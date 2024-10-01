@@ -1,4 +1,4 @@
-import '~/styles/global.css'
+import globalStyle from '~/styles/global.css?url'
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { createRootRouteWithContext, Outlet, ScrollRestoration } from '@tanstack/react-router'
@@ -20,6 +20,12 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     },
     {
       title: 'TanStack Start Starter',
+    },
+  ],
+  links: () => [
+    {
+      rel: 'stylesheet',
+      href: globalStyle,
     },
   ],
   component: RootComponent,
