@@ -58,6 +58,7 @@ function Home() {
 
     const promise = createTodoMutation.mutateAsync(dataParsed, {
       onSuccess: () => form.reset(),
+      onError: (e) => console.error(`Error from server function: ${e.message}`),
     })
 
     toast.promise(promise, {

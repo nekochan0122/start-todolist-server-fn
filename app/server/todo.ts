@@ -25,6 +25,16 @@ export type CreateTodoInput = {
 }
 
 export const createTodo = createServerFn('POST', async ({ name }: CreateTodoInput) => {
+  const isAlreadyExist = await prisma.todo.findMany({
+    where: {
+      name,
+    }
+  })
+
+  if (isAlreadyExist.length > 0) {
+    throw new Error(`Todo ${name} already exists`)
+  }
+
   await prisma.todo.create({
     data: {
       name,
