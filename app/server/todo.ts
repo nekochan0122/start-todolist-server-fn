@@ -28,7 +28,7 @@ export const createTodo = createServerFn('POST', async ({ name }: CreateTodoInpu
   const isAlreadyExist = await prisma.todo.findMany({
     where: {
       name,
-    }
+    },
   })
 
   if (isAlreadyExist.length > 0) {
