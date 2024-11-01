@@ -18,6 +18,10 @@ export default defineConfig({
     generatedRouteTree: 'app/route-tree.gen.ts',
   },
   vite: {
-    plugins: () => [tsconfigPaths()],
+    plugins: [
+      tsconfigPaths({
+        projects: ['./tsconfig.json'],
+      }),
+    ],
   },
 })
